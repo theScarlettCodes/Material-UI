@@ -1,9 +1,17 @@
-import "./App.css";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Create from "./pages/Create";
+import Notes from "./pages/Notes";
 
 function App() {
   return (
     <div className="App">
-      <h1>Get Started</h1>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Notes />} />
+          <Route path="/create" element={<Create />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
