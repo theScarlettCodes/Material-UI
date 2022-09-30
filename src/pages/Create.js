@@ -6,19 +6,7 @@ import SendIcon from "@material-ui/icons/Send";
 import KeyboardArrowRightIcon from "@material-ui/icons/KeyboardArrowRight";
 import { makeStyles } from "@material-ui/core";
 
-const useStyles = makeStyles({
-  btn: {
-    fontSize: 60,
-    backgroundColor: "violet",
-    "&:hover": {
-      background: "blue",
-    },
-  },
-  title: {
-    textDecoration: "underline",
-    marginBottom: 20,
-  },
-});
+const useStyles = makeStyles({});
 
 const Create = () => {
   const classes = useStyles();
@@ -26,7 +14,6 @@ const Create = () => {
   return (
     <Container>
       <Typography
-        className={classes.title}
         variant="h6"
         color="textSecondary"
         component="h2"
@@ -36,10 +23,9 @@ const Create = () => {
       </Typography>
 
       <Button
-        className={classes.btn}
         onClick={() => console.log("Clicked")}
         type="submit"
-        color="secondary"
+        color="primary"
         variant="contained"
         startIcon={<SendIcon />}
         endIcon={<KeyboardArrowRightIcon />}
