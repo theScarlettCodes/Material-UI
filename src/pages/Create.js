@@ -1,9 +1,11 @@
 import React from "react";
-import { Typography } from "@material-ui/core";
+import { ButtonGroup, Typography } from "@material-ui/core";
+import { Button } from "@material-ui/core";
+import { Container } from "@material-ui/core";
 
 const Create = () => {
   return (
-    <div>
+    <Container>
       <Typography
         variant="h6"
         color="textSecondary"
@@ -12,7 +14,16 @@ const Create = () => {
       >
         Create a New Note
       </Typography>
-    </div>
+
+      <Button
+        onClick={() => console.log("Clicked")}
+        type="submit"
+        color="secondary"
+        variant="contained"
+      >
+        Submit
+      </Button>
+    </Container>
   );
 };
 
