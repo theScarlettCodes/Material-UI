@@ -1,10 +1,18 @@
 import React, { useState } from "react";
-import { ButtonGroup, TextField, Typography } from "@material-ui/core";
+import {
+  FormControl,
+  FormControlLabel,
+  FormLabel,
+  RadioGroup,
+  TextField,
+  Typography,
+} from "@material-ui/core";
 import { Button } from "@material-ui/core";
 import { Container } from "@material-ui/core";
 import SendIcon from "@material-ui/icons/Send";
 import KeyboardArrowRightIcon from "@material-ui/icons/KeyboardArrowRight";
 import { makeStyles } from "@material-ui/core";
+import { Radio } from "@material-ui/core";
 
 const useStyles = makeStyles({
   field: {
@@ -20,11 +28,12 @@ const Create = () => {
   const [details, setDetails] = useState("");
   const [titleError, setTitleError] = useState(false);
   const [detailsError, setDetailsError] = useState(false);
+  const [category, setCategory] = useState("money");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setTitleError(false);
-    setDetails(false);
+    setDetailsError(false);
 
     if (title === "") {
       setTitleError(true);
@@ -35,7 +44,7 @@ const Create = () => {
     }
 
     if (title && details) {
-      console.log(title, details);
+      console.log(title, details, category);
     }
   };
 
@@ -73,6 +82,25 @@ const Create = () => {
           required
           error={detailsError}
         />
+
+        <FormControl>
+          <FormLabel>Note Category</FormLabel>
+          <RadioGroup
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+          >
+            <FormControlLabel control={<Radio />} label="Money" value="money" />
+            <FormControlLabel control={<Radio />} label="Todos" value="todos" />
+            <FormControlLabel
+              control={<Radio />}
+              label="Reminders"
+              value="reminders"
+            />
+            <FormControlLabel control={<Radio />} label="Work" value="work" />
+          </RadioGroup>
+        </FormControl>
+
+        <br />
         <Button
           type="submit"
           color="primary"
