@@ -3,14 +3,14 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Create from "./pages/Create";
 import Notes from "./pages/Notes";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core";
-import { purple } from "@material-ui/core/colors";
+import { blue } from "@material-ui/core/colors";
 
 const theme = createMuiTheme({
   palette: {
     primary: {
       main: "#fefefe",
     },
-    secondary: purple,
+    secondary: blue,
   },
   typography: {
     fontFamily: "Quicksand",
