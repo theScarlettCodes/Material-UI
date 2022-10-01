@@ -4,11 +4,12 @@ import Create from "./pages/Create";
 import Notes from "./pages/Notes";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core";
 import { blue, purple } from "@material-ui/core/colors";
+import Layout from "./components/Layout";
 
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: "#A020F0",
+      main: "#fefefe",
     },
     secondary: purple,
   },
@@ -26,10 +27,12 @@ function App() {
     <div className="App">
       <ThemeProvider theme={theme}>
         <Router>
-          <Routes>
-            <Route path="/" element={<Notes />} />
-            <Route path="/create" element={<Create />} />
-          </Routes>
+          <Layout>
+            <Routes>
+              <Route path="/" element={<Notes />} />
+              <Route path="/create" element={<Create />} />
+            </Routes>
+          </Layout>
         </Router>
       </ThemeProvider>
     </div>
